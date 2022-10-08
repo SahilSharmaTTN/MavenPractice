@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MavenPractice:jar">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MavenPractice.jar">
+      <element id="module-output" name="MavenPractice" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.18/spring-beans-5.3.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/5.3.18/spring-jdbc-5.3.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.3.18/spring-tx-5.3.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.18/spring-core-5.3.18.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.18/spring-jcl-5.3.18.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

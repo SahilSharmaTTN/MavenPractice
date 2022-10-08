@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sahil</groupId>
+    <artifactId>MavenPractice</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>MavenModule1</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+<!--        TEST-->
+<!--        We use this scope to indicate that dependency isn't required at standard runtime of the application but is used only for test purposes.-->
+<!--        Test dependencies aren't transitive and are only present for test and execution classpaths.-->
+<!--        The standard use case for this scope is adding a test library such as JUnit to our application:-->
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+<!--        COMPILE-->
+<!--        This is the default scope when no other scope is provided.-->
+<!--        Dependencies with this scope are available on the classpath of the project in all build tasks. They are also propagated to the dependent projects.-->
+<!--        More importantly, these dependencies are also transitive:-->
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+<!--        PROVIDED-->
+<!--        We use this scope to mark dependencies that should be provided at runtime by JDK or a container.-->
+<!--        A good use case for this scope would be a web application deployed in some container,
+            where the container already provides some libraries itself. For example,
+            this could be a web server that already provides the Servlet API at runtime.-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+<!--        RUNTIME-->
+<!--        The dependencies with "runtime" scope are required at runtime.
+            But we don't need them for the compilation of the project code.
+            Because of that, dependencies marked with the runtime scope will be present in the runtime and test classpath,
+            but they will be missing from the compile classpath.-->
+<!--        A JDBC driver is a good example of dependencies that should use the runtime scope:-->
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+            <scope>runtime</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.sahil.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+</project>
