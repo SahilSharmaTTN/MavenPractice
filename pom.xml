@@ -18,7 +18,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--    remote repository-->
+    <repositories>
+        <repository>
+            <id>jboss-repo</id>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+
     <dependencies>
+
 <!--        TEST-->
 <!--        We use this scope to indicate that dependency isn't required at standard runtime of the application but is used only for test purposes.-->
 <!--        Test dependencies aren't transitive and are only present for test and execution classpaths.-->
